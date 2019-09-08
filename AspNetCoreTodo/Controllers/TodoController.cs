@@ -30,7 +30,7 @@ namespace AspNetCoreTodo.Controllers
     
             //Render view using the model
             return View(model); 
-
+ 
             //or
             // return View(new TodoViewModel() { Items = items});
 
