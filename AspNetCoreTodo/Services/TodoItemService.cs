@@ -41,5 +41,19 @@ namespace AspNetCoreTodo.Services
 
             // The newItem.Title property has already been set by ASP.NET Core's model binder, so this method only needs to assign an ID and set the default values for the other properties. Then, the new item is added to the database context. It isn't actually saved until you call SaveChangesAsync(). If the save operation was successful, SaveChangesAsync() will return 1.
         }
+
+        public async Task<bool> MarkDoneAsync(Guid id)
+        {
+            var item = await _context.Items
+                .Where(x => x.Id == id)
+                .SingleOrDefaultAsync();
+
+            if (item == null) return false;
+
+            item.IsDone = true;
+
+            var saveResult = await _context.SaveChangesAsync();
+            return saveResult == 1;   //one entity should have been updated
+        }
     }
 }
