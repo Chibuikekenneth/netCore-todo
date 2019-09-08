@@ -12,7 +12,7 @@ namespace AspNetCoreTodo.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    IsDone = table.Column<bool>(nullable: false),
+                    IsDone = table.Column<bool>(nullable: false), 
                     Title = table.Column<string>(nullable: false),
                     DueAt = table.Column<DateTimeOffset>(nullable: true)
                 },
