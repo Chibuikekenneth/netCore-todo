@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AspNetCoreTodo.Controllers;
 using AspNetCoreTodo.Models;
 
 namespace AspNetCoreTodo.Services
@@ -9,7 +10,7 @@ namespace AspNetCoreTodo.Services
     // services.AddSingleton<ITodoItemService, FakeTodoItemService>();
     public interface ITodoItemService
     {
-        Task<TodoItem[]> GetIncompleteItemsAsync();
+        Task<TodoItem[]> GetIncompleteItemsAsync(ApplicationUser user);
 
         Task<bool> AddItemAsync(TodoItem newItem);
 
