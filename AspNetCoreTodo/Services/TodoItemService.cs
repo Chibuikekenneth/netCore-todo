@@ -21,18 +21,25 @@ namespace AspNetCoreTodo.Services
         //gets items[] from the database
         public async Task<TodoItem[]> GetIncompleteItemsAsync(ApplicationUser user)
         {
-            var items = await _context.Items
-                .Where(x => x.IsDone == false)
+            // var items = await _context.Items
+            //     .Where(x => x.IsDone == false)
+            //     .ToArrayAsync();
+            // return items;
+
+            //or
+
+            return await _context.Items
+                .Where(x => x.IsDone == false && x.UserId == user.Id)
                 .ToArrayAsync();
-            return items;
         }
 
         //adds item to the database
-        public async Task<bool> AddItemAsync(TodoItem newItem)
+        public async Task<bool> AddItemAsync(TodoItem newItem, ApplicationUser user)
         {
             newItem.Id = Guid.NewGuid();
             newItem.IsDone = false;
             newItem.DueAt = DateTimeOffset.Now.AddDays(3);
+            newItem.UserId = user.Id;
 
             _context.Items.Add(newItem);
 
@@ -43,10 +50,10 @@ namespace AspNetCoreTodo.Services
             // The newItem.Title property has already been set by ASP.NET Core's model binder, so this method only needs to assign an ID and set the default values for the other properties. Then, the new item is added to the database context. It isn't actually saved until you call SaveChangesAsync(). If the save operation was successful, SaveChangesAsync() will return 1.
         }
 
-        public async Task<bool> MarkDoneAsync(Guid id)
+        public async Task<bool> MarkDoneAsync(Guid id, ApplicationUser user)
         {
             var item = await _context.Items
-                .Where(x => x.Id == id)
+                .Where(x => x.Id == id && x.UserId == user.Id)
                 .SingleOrDefaultAsync();
 
             if (item == null) return false;
