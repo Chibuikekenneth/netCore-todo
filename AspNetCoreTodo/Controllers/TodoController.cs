@@ -15,13 +15,14 @@ namespace AspNetCoreTodo.Controllers
     {
         //ITodoItemServices interface 
         private readonly ITodoItemService _todoItemService;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
 
-         public TodoController(ITodoItemService todoItemService, UserManager<ApplicationUser> userManager)
+         public TodoController(ITodoItemService todoItemService, UserManager<IdentityUser> userManager)
         {
             _todoItemService = todoItemService;
             _userManager = userManager;
         }
+
         public async Task<IActionResult> index()
         {
             var currentUser = await _userManager.GetUserAsync(User);
