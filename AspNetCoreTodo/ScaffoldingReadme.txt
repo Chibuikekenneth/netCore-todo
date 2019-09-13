@@ -16,3 +16,8 @@ The generated UI requires MVC. To add MVC to your app:
 
 Apps that use ASP.NET Core Identity should also use HTTPS. To enable HTTPS see https://go.microsoft.com/fwlink/?linkid=848054.
 
+
+
+<!-- The _AdminActionspartial  view first uses the SignInManager to quickly determine whether the user is logged in. If they aren't, the rest of the view code can be skipped. If there is a logged-in user, the
+UserManager is used to look up their details and perform an authorization check with IsInRoleAsync()
+. If all checks succeed and the user is an adminstrator, a Manage users link is added to the navbar. -->

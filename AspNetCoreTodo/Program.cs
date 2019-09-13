@@ -15,7 +15,6 @@ namespace AspNetCoreTodo
     {
         public static void Main(string[] args)
         {
-            //updating main() to call new method ==> InitializeDatabase()
             // CreateWebHostBuilder(args).Build().Run();
 
             var host = CreateWebHostBuilder(args).Build();
@@ -44,3 +43,6 @@ namespace AspNetCoreTodo
                 .UseStartup<Startup>();
     }
 }
+
+
+//using dependency injection to get service collection that SeedData.InitializeAsync() needs and then runs the method to seed the database. If something goes wrong, an error is logged.
