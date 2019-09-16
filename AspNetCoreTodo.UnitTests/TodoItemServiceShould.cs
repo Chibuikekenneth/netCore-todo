@@ -41,9 +41,15 @@ namespace AspNetCoreTodo.UnitTests
                 Assert.Equal("Testing?", item.Title);
                 Assert.Equal(false, item.IsDone);
                 var difference = DateTimeOffset.Now.AddDays(3) - item.DueAt;
-                 Assert.True(difference < TimeSpan.FromSeconds(3));
+                Assert.True(difference < TimeSpan.FromSeconds(2));
             }
             
         }
     }
 }
+
+
+
+//As an extra challenge, try writing unit tests that ensure: The MarkDoneAsync() method returns false if it's passed an ID that doesn't exist
+//The MarkDoneAsync() method returns true when it makes a valid item as complete
+//The GetIncompleteItemsAsync() method returns only the items owned by a particular user

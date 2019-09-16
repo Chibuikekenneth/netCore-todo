@@ -11469,11 +11469,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chibuike/Documents/c#/AspNetCoreTodo/netCore-todo/AspNetCoreTodo.UnitTests/AspNetCoreTodo.UnitTests.csproj",
+      "projectUniqueName": "/home/chibuike/Documents/c#/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.UnitTests/AspNetCoreTodo.UnitTests.csproj",
       "projectName": "AspNetCoreTodo.UnitTests",
-      "projectPath": "/home/chibuike/Documents/c#/AspNetCoreTodo/netCore-todo/AspNetCoreTodo.UnitTests/AspNetCoreTodo.UnitTests.csproj",
+      "projectPath": "/home/chibuike/Documents/c#/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.UnitTests/AspNetCoreTodo.UnitTests.csproj",
       "packagesPath": "/home/chibuike/.nuget/packages/",
-      "outputPath": "/home/chibuike/Documents/c#/AspNetCoreTodo/netCore-todo/AspNetCoreTodo.UnitTests/obj/",
+      "outputPath": "/home/chibuike/Documents/c#/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.UnitTests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
@@ -11490,8 +11490,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/home/chibuike/Documents/c#/AspNetCoreTodo/netCore-todo/AspNetCoreTodo/AspNetCoreTodo.csproj": {
-              "projectPath": "/home/chibuike/Documents/c#/AspNetCoreTodo/netCore-todo/AspNetCoreTodo/AspNetCoreTodo.csproj"
+            "/home/chibuike/Documents/c#/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.csproj": {
+              "projectPath": "/home/chibuike/Documents/c#/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo/AspNetCoreTodo.csproj"
             }
           }
         }
